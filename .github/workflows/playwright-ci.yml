@@ -33,8 +33,7 @@ jobs:
             --require-module ts-node/register \
             --require MainTest/tests/**/*.ts \
             --require MainTest/support/**/*.ts \
-            --publish-quiet \
-            --format html:reports/report.html
+            --format html:MainTest/reports/report.html
 
       - name: Upload HTML Report
         if: always()
