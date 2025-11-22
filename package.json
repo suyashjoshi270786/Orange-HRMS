@@ -1,0 +1,21 @@
+{
+  "name": "orange",
+  "version": "1.0.0",
+  "description": "Orange HRMS",
+  "license": "ISC",
+  "author": "Suyash Joshi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --require-module ts-node/register --require \"./MainTest/**/*.ts\" \"./MainTest/tests/features/*.feature"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.56.1",
+    "cucumber-html-reporter": "^7.2.0",
+    "dotenv": "^17.2.3",
+    "playwright": "^1.56.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
