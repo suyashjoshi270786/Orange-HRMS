@@ -2,8 +2,7 @@ name: Playwright Cucumber CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
   schedule:
     - cron: "30 1 * * *"   # 7 AM IST
@@ -28,15 +27,18 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Cucumber BDD tests
+      - name: Run Cucumber Tests
         run: |
-          npx cucumber-js --require-module ts-node/register \
-          --require tests/**/*.ts \
-          --format html:report.html
+          npx cucumber-js MainTest/tests/features \
+            --require-module ts-node/register \
+            --require MainTest/tests/**/*.ts \
+            --require MainTest/support/**/*.ts \
+            --publish-quiet \
+            --format html:reports/report.html
 
-      - name: Upload Cucumber HTML Report
+      - name: Upload HTML Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-html-report
-          path: report.html
+          path: MainTest/reports

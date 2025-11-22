@@ -13,6 +13,9 @@ export class CustomWorld extends World {
 
   //Existing page objects
 
+    mockData: any = null;
+  mockFired: boolean = false;
+
   constructor(options: IWorldOptions) {
     super(options);
   }
