@@ -22,7 +22,7 @@ Before(async function (this: CustomWorld) {
   console.log("Before hook running");
 
   const browserType = getBrowserType();
-  this.browser = await browserType.launch({ headless: false, slowMo: 100 });
+  this.browser = await browserType.launch({ headless: true, slowMo: 100 });
 
   const context = await this.browser.newContext();
   this.page = await context.newPage();
