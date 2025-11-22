@@ -29,10 +29,10 @@ jobs:
 
       - name: Run Cucumber Tests
         run: |
-          npx cucumber-js MainTest/tests/features \
+          npx cucumber-js "MainTest/tests/features" \
             --require-module ts-node/register \
-            --require MainTest/tests/**/*.ts \
-            --require MainTest/support/**/*.ts \
+            --require "MainTest/tests/**/*.ts" \
+            --require "MainTest/support/**/*.ts" \
             --format html:MainTest/reports/report.html
 
       - name: Upload HTML Report
